@@ -4,7 +4,8 @@ namespace Basics;
 
 class Singleton
 {
-    private static $instance;
+
+    protected static $instance;
 
     public static function getInstance()
     {
