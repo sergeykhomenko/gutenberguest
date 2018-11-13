@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function ($className) {
-    require_once 'src/' . $className . '.php';
+    require_once 'src/' . str_replace('\\', '/', $className) . '.php';
 });
 
 use Gutenberguest\Theme;
