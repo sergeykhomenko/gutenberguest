@@ -2,25 +2,19 @@
 
 namespace Gutenberguest;
 
-class Theme
+use Basics\Singleton;
+use Gutenberguest\Guten\Guten;
+
+class Theme extends Singleton
 {
 
-    private static $instance;
+    /** @var Guten Gutenberg Adapter */
+    public $gutenberg;
 
-    public static function getInstance()
-    {
-        if (null === static::$instance) {
-            static::$instance = new static();
-        }
+    public function __construct() {
 
-        return static::$instance;
+        $this->gutenberg = Guten::getInstance();
+
     }
-
-    /**
-     * Locks for contruct, clone, wakeup methods
-     */
-    public function __construct() {}
-    public function __clone() {}
-    public function __wakeup() {}
 
 }
