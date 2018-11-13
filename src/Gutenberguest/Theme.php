@@ -17,4 +17,9 @@ class Theme extends Singleton
 
     }
 
+    public function init()
+    {
+        add_action('init', [$this->gutenberg, 'wpInit']);
+    }
+
 }
