@@ -21,8 +21,8 @@ class GutenBlock
 
     public function wpInit()
     {
-        $blockUrlBase   = apply_filters('gutenblock_base', get_template_directory_uri() . '/blocks/');
-        $blockHandle    = apply_filters('gutenblock_handle', 'gutenberguest-block' . $this->block, $this->block);
+        $blockUrlBase   = apply_filters('gutenblock_base', get_stylesheet_directory_uri() . '/blocks/');
+        $blockHandle    = apply_filters('gutenblock_handle', 'gutenberguest-block-' . $this->block, $this->block);
         $blockName      = apply_filters('gutenblock_name', 'gutenberguest/' . $this->block);
 
         wp_register_script(

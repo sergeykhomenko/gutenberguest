@@ -1,7 +1,10 @@
 <?php
 
 spl_autoload_register(function ($className) {
-    require_once 'src/' . str_replace('\\', '/', $className) . '.php';
+    $filename = dirname( __FILE__ ) . '/src/' . str_replace('\\', '/', $className) . '.php';
+    if(file_exists($filename)) {
+        require_once 'src/' . str_replace('\\', '/', $className) . '.php';
+    }
 });
 
 use Gutenberguest\Theme;
@@ -12,5 +15,3 @@ $core = Theme::getInstance();
 $core->gutenberg->register([
     'block' => 'slider'
 ]);
-
-add_action('init', [$core, 'init']);
